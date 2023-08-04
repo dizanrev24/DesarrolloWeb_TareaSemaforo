@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semáforo</title>
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <h1 class="titulo">Semáforo</h1>
+  <div class="semaforo">
+    <div class="light red"></div>
+    <div class="light orange"></div>
+    <div class="light green"></div>
+  </div>
+
+  <script>
+    const redLight = document.querySelector('.red');
+    const orangeLight = document.querySelector('.orange');
+    const greenLight = document.querySelector('.green');
+  
+    function changeLights() {
+      redLight.style.backgroundColor = 'red';
+      orangeLight.style.backgroundColor = 'gray';
+      greenLight.style.backgroundColor = 'gray';
+  
+      setTimeout(() => {
+        redLight.style.backgroundColor = 'gray';
+        orangeLight.style.backgroundColor = 'orange';
+        greenLight.style.backgroundColor = 'gray';
+  
+        setTimeout(() => {
+          redLight.style.backgroundColor = 'gray';
+          orangeLight.style.backgroundColor = 'gray';
+          greenLight.style.backgroundColor = 'green';
+        }, 5000);
+  
+      },5000);
+    }
+  
+    setInterval(changeLights, 8000);
+  </script>
+  
+
+</body>
+</html>
+
